@@ -1,0 +1,24 @@
+---
+export interface Props {
+    title?: string;
+    description?: string;
+}
+
+const { title, description } = Astro.props as Props
+---
+
+<header
+    class="flex flex-col justify-center items-center w-full h-screen p-4 bg-orange-100 bg-gradient-to-r from-orange-100 to-orange-200 text-slate-800">
+    <a href="/" class="font-bold">{title}</a>
+    <h1 class="text-6xl leading-none font-bold text-center mb-2 ">Welcome to <br /><span class="">{title} </span>
+    </h1>
+    <p class="text-center mb-6">
+        {description}
+    </p>
+    <div class="flex text-6xl">
+        <span class="iconify" data-icon="emojione-monotone:hot-dog"></span>
+        <span class="iconify" data-icon="emojione-monotone:hot-dog"></span>
+        <span class="iconify" data-icon="emojione-monotone:hot-dog"></span>
+    </div>
+
+</header>

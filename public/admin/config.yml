@@ -1,0 +1,24 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "public/images/"
+public_folder: "images/"
+
+collections:
+  - name: dogs
+    label: Dogs
+    folder: src/pages/dogs
+    create: true
+    fields:
+      - {
+          label: "Layout",
+          name: "layout",
+          widget: "hidden",
+          default: "../../layouts/Article.astro",
+        }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Featured Image", name: "featuredImg", widget: "image" }
+      - { label: "Overall Score", name: "rating", widget: "number" }
+      - { label: "Body", name: "body", widget: "markdown" }

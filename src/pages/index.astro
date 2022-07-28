@@ -1,0 +1,29 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Banner from "../components/Banner.astro"
+import RatingPreview from "../components/RatingPreview.astro";
+import Card from "../components/Card.astro";
+
+---
+
+<Layout isHome={true}>
+	<main class="space-y-12 mb-12">
+		<div class="text-center">
+			<Banner title="The Official Vegan Hot Dog Rankings" />
+			<h3 class="text-2xl font-bold mb-2 inline-block">The Very Best
+			</h3>
+			<div class="flex text-2xl justify-center mb-6"><span class="text-orange-500 iconify"
+					data-icon="emojione-monotone:hot-dog"></span><span class="text-orange-500 iconify"
+					data-icon="emojione-monotone:hot-dog"></span><span class="text-orange-500 iconify"
+					data-icon="emojione-monotone:hot-dog"></span><span class="text-orange-500 iconify"
+					data-icon="emojione-monotone:hot-dog"></span><span class="text-orange-500 iconify"
+					data-icon="emojione-monotone:hot-dog"></span></div>
+
+			<ul class="max-w-screen-lg mx-auto space-y-6 ">
+				<RatingPreview dog="Lightlife" rating={94} />
+			</ul>
+
+
+		</div>
+	</main>
+</Layout>

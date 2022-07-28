@@ -1,0 +1,51 @@
+---
+import Header from "../components/Header.astro"
+import Hero from "../components/Hero.astro"
+
+import config from "../config.json"
+
+export interface Props {
+	title?: string;
+	description?: string;
+	isHome?: boolean;
+}
+
+const { title = config.title, description = config.description, isHome } = Astro.props as Props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width" />
+	<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+	<title>{title}</title>
+	<meta name="description" content={description} />
+	<script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
+</head>
+
+<body class="text-stone-800  min-h-screen scroll-smooth">
+	{!isHome &&
+	<Header />}
+	{isHome &&
+	<Hero title={title} description={description} />}
+	<slot />
+	<footer class="bg-cyan-200 p-8 text-xl">
+		<div class="prose mx-auto">
+			<h2 class="text-center">About Vegan Dog Rater</h2>
+			<p class="">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus laoreet eu leo sit amet
+				euismod. Etiam gravida, urna id dictum aliquam, neque odio tristique enim, vel tristique nisl turpis at
+				diam. In convallis
+				neque eget odio posuere, sit amet posuere quam blandit. Donec id turpis tempus velit vestibulum
+				scelerisque.
+				Quisque lobortis commodo elit et volutpat. Vivamus eu fringilla ipsum. Morbi diam sapien, consequat eu
+				mattis et, interdum ac urna. Suspendisse nulla sapien, finibus eu nibh sed, gravida lacinia sem.
+				Pellentesque viverra congue nibh sed tincidunt. Proin rutrum ligula id ligula feugiat mollis. Nunc nisi
+				tellus, maximus nec tortor id, iaculis viverra nunc. </p>
+
+		</div>
+	</footer>
+</body>
+
+</html>
