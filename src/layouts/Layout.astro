@@ -26,15 +26,15 @@ const { title = config.title, description = config.description, isHome } = Astro
 	<script is:inline src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
 
-<body class="text-stone-800  min-h-screen scroll-smooth">
+<body class="text-dark bg-light  min-h-screen scroll-smooth">
 	{!isHome &&
 	<Header />}
 	{isHome &&
 	<Hero title={title} description={description} />}
 	<slot />
-	<footer class="bg-cyan-200 p-8 text-xl">
-		<div class="prose mx-auto">
-			<h2 class="text-center">About Vegan Dog Rater</h2>
+	<footer class="bg-theme p-8 text-xl">
+		<div class="prose lg:prose-lg prose-stone mx-auto">
+			<h2 class="">About Vegan Dog Rater</h2>
 			<p class="">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus laoreet eu leo sit amet
 				euismod. Etiam gravida, urna id dictum aliquam, neque odio tristique enim, vel tristique nisl turpis at
 				diam. In convallis
