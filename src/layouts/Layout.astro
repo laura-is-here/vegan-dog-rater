@@ -22,8 +22,8 @@ const { title = config.title, description = config.description, isHome } = Astro
 	<link rel="icon" type="image/x-icon" href="/favicon.ico" />
 	<title>{title}</title>
 	<meta name="description" content={description} />
-	<script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
-	<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+	<script is:inline src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
+	<script is:inline src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
 
 <body class="text-stone-800  min-h-screen scroll-smooth">
