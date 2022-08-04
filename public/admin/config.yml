@@ -17,8 +17,27 @@ collections:
           widget: "hidden",
           default: "../../layouts/Article.astro",
         }
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Dog Name", name: "title", widget: "string", required: true }
+      - {
+          label: "Publish Date",
+          name: "date",
+          widget: "datetime",
+          required: true,
+        }
       - { label: "Featured Image", name: "featuredImg", widget: "image" }
-      - { label: "Overall Score", name: "rating", widget: "number" }
+      - {
+          label: "Overall Score",
+          name: "rating",
+          widget: "number",
+          required: true,
+        }
+      - { label: "Brand", name: "brand", widget: "string" }
+      - {
+          label: "Excerpt",
+          name: "exceprt",
+          widget: "string",
+          required: true,
+          pattern:
+            ["^.{0,96}$", "Description cannot be more than 96 characters"],
+        }
       - { label: "Body", name: "body", widget: "markdown" }

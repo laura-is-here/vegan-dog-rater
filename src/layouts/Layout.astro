@@ -1,5 +1,5 @@
 ---
-import Header from "../components/Header.astro"
+import Nav from "../components/Nav.astro"
 import Hero from "../components/Hero.astro"
 
 import config from "../config.json"
@@ -27,23 +27,19 @@ const { title = config.title, description = config.description, isHome } = Astro
 </head>
 
 <body class="text-dark bg-light  min-h-screen scroll-smooth">
-	{!isHome &&
-	<Header />}
 	{isHome &&
 	<Hero title={title} description={description} />}
 	<slot />
 	<footer class="bg-theme p-8 text-xl">
 		<div class="prose lg:prose-lg prose-stone mx-auto">
 			<h2 class="">About Vegan Dog Rater</h2>
-			<p class="">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus laoreet eu leo sit amet
-				euismod. Etiam gravida, urna id dictum aliquam, neque odio tristique enim, vel tristique nisl turpis at
-				diam. In convallis
-				neque eget odio posuere, sit amet posuere quam blandit. Donec id turpis tempus velit vestibulum
-				scelerisque.
-				Quisque lobortis commodo elit et volutpat. Vivamus eu fringilla ipsum. Morbi diam sapien, consequat eu
-				mattis et, interdum ac urna. Suspendisse nulla sapien, finibus eu nibh sed, gravida lacinia sem.
-				Pellentesque viverra congue nibh sed tincidunt. Proin rutrum ligula id ligula feugiat mollis. Nunc nisi
-				tellus, maximus nec tortor id, iaculis viverra nunc. </p>
+			<p class="">I promised my sister I'd bring her Mia Fey but… (Which Daddy was that again?) If you want tea
+				that badly, buy some yourself! Cute girls never lie. Ever.</p>
+			<p>
+				Why, Mr. Edgeworth... I'm not sure I like you wagging your finger at me as though I were some hoser! We
+				were great together! We were Romeo and Juliet, Cleopatra and Mark Anthony! (Should I be grateful this
+				coffee is only hot enough to give me first degree burns?) 'To err is human, to forgive, divine.' I-I
+				think I need to clear my head. I-I get it! That's why my lunch was so salty! Noooooooooooo! </p>
 
 		</div>
 	</footer>

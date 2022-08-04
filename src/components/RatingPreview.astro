@@ -1,23 +1,27 @@
 ---
 export interface Props {
     dog: string;
+    brand?: string;
     rating: number;
+    excerpt?: string;
+    url: string;
 }
 
-const { dog, rating } = Astro.props as Props
+const { dog, brand, rating, excerpt, url } = Astro.props as Props
 ---
 
 <li
     class="border-dashed border-4 border-stone-300 rounded-lg flex items-center justify-between mx-2 relative hover:bg-theme hover:border-accent-red transition-all duration-500">
-    <div class="flex items-center">
-        <div class="drop-shadow-lg rounded-full -rotate-12 lg:p-2 -mt-12 lg:-ml-8 mr-2">
-            <img class=" object-fill" width="100px" src="/images/lightlife.png" />
+    <div class="">
+        <div class="drop-shadow-lg rounded-full -rotate-12 p-2 -mt-12 lg:-ml-8 mr-2 flex-none">
+            <img class="" width="100px" src="/images/lightlife.png" />
         </div>
 
     </div>
     <div class="p-6">
         <h4 class="text-4xl font-bold text-center">{dog}</h4>
-        <p class="italic">"Go-to for a protein-packed snack"</p>
+        {brand && <p class="font-bold">by {brand}</p>}
+        {excerpt && <p class="italic">"{excerpt}"</p>}
     </div>
 
 
@@ -25,5 +29,5 @@ const { dog, rating } = Astro.props as Props
         class="p-8 drop-shadow-lg font-bold text-light bg-accent-red rounded-full rotate-12 lg:scale-110 lg:-mr-8 -mb-8">
         <p class="text-6xl leading-none">{rating}</p>
     </div>
-    <a class="absolute inset-0" href="#"><span class="sr-only">Read the full {dog} review</span></a>
+    <a class="absolute inset-0" href={url}><span class="sr-only">Read the full {dog} review</span></a>
 </li>

@@ -1,4 +1,8 @@
 {
   "title": "Vegan Dog Rater",
-  "description": "Rating and reviewing the best (and worst) vegan hot dogs"
+  "description": "Rating and reviewing the best (and worst) vegan hot dogs",
+  "categories": [
+    { "title": "Top Dogs", "minRating": 90, "maxRating": 100 },
+    { "title": "Under Dogs", "minRating": 60, "maxRating": 89 }
+  ]
 }
