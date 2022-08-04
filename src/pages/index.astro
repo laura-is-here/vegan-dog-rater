@@ -9,7 +9,7 @@ const dogs = await Astro.glob("./dogs/*.md")
 
 <Layout isHome={true}>
 	<main class="space-y-12 mb-12">
-		<div class="text-center">
+		<div class="">
 			<Banner title="The Definitive Vegan Hot Dog Rankings" />
 			{config.categories.map(category => (
 			<h3 class="text-2xl font-bold mb-2 inline-block">{category.title}</h3>
