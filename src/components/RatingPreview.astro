@@ -11,7 +11,7 @@ const { dog, brand, rating, excerpt, url } = Astro.props as Props
 ---
 
 <li
-    class="border-dashed border-4 border-stone-300 rounded-lg flex items-center justify-between mx-2 relative hover:bg-theme hover:border-accent-red transition-all duration-500">
+    class="border-dashed border-4 border-stone-300 rounded-lg flex items-start lg:items-center justify-between mx-2 relative hover:bg-theme hover:border-accent-red transition-all duration-500">
     <div class="p-6">
         <h4 class="text-4xl font-bold">{dog}</h4>
         {brand && <p class="font-bold">by {brand}</p>}
