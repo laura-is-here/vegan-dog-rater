@@ -7,9 +7,9 @@ const { content } = Astro.props
 <Layout title={content.title} description={content.description}>
     <main>
         <article class="max-w-screen-lg mx-2 lg:mx-auto space-y-12 pt-12">
-            <div class="flex items-center justify-between">
+            <div class="flex items-start lg:items-center lg:justify-between">
                 <div>
-                    <h1 class="inline-block text-6xl leading-none font-bold mb-2">
+                    <h1 class="inline-block text-4xl lg:text-6xl leading-none font-bold mb-2">
                         {!content.brand ? content.title : `${content.title} by ${content.brand} Review`}
                     </h1>
 
@@ -18,8 +18,8 @@ const { content } = Astro.props
                 </div>
 
                 <div
-                    class="inline-block p-8 drop-shadow-lg font-bold text-light bg-accent-red rounded-full rotate-12 -mt-8">
-                    <p class="text-6xl leading-none">{content.rating}</p>
+                    class="inline-block p-4 lg:p-8 drop-shadow-lg font-bold text-light bg-accent-red rounded-full rotate-12 lg:-mt-8">
+                    <p class="text-4xl lg:text-6xl leading-none">{content.rating}</p>
                 </div>
 
             </div>
