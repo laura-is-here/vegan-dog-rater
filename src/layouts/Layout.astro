@@ -1,8 +1,8 @@
 ---
-import Nav from "../components/Nav.astro"
-import Hero from "../components/Hero.astro"
+import Nav from "../components/Nav.astro";
+import Hero from "../components/Hero.astro";
 
-import config from "../config.json"
+import config from "../config.json";
 
 export interface Props {
 	title?: string;
@@ -10,43 +10,70 @@ export interface Props {
 	isHome?: boolean;
 }
 
-const { title = config.title, description = config.description, isHome } = Astro.props as Props;
+const {
+	title = config.title,
+	description = config.description,
+	isHome,
+} = Astro.props as Props;
 ---
 
 <!DOCTYPE html>
 <html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+		<link
+			rel="apple-touch-icon"
+			sizes="180x180"
+			href="/apple-touch-icon.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="32x32"
+			href="/favicon-32x32.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="16x16"
+			href="/favicon-16x16.png"
+		/>
+		<link rel="manifest" href="/site.webmanifest" />
+		<title>{title}</title>
+		<meta name="description" content={description} />
+		<script
+			is:inline
+			src="https://code.iconify.design/2/2.2.1/iconify.min.js"
+		></script>
+		<script
+			is:inline
+			src="https://identity.netlify.com/v1/netlify-identity-widget.js"
+		></script>
+	</head>
 
-<head>
-	<meta charset="UTF-8" />
-	<meta name="viewport" content="width=device-width" />
-	<link rel="icon" type="image/x-icon" href="/favicon.ico" />
-	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-	<link rel="manifest" href="/site.webmanifest">
-	<title>{title}</title>
-	<meta name="description" content={description} />
-	<script is:inline src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
-	<script is:inline src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-</head>
-
-<body class="text-dark bg-light  min-h-screen scroll-smooth">
-	{isHome &&
-	<Hero title={title} description={description} />}
-	<slot />
-	<footer class="bg-theme p-8 text-xl">
-		<div class="prose lg:prose-lg prose-stone mx-auto">
-			<h2 class="">About Vegan Dog Rater</h2>
-			<p class="">I promised my sister I'd bring her Mia Fey but… (Which Daddy was that again?) If you want tea
-				that badly, buy some yourself! Cute girls never lie. Ever.</p>
-			<p>
-				Why, Mr. Edgeworth... I'm not sure I like you wagging your finger at me as though I were some hoser! We
-				were great together! We were Romeo and Juliet, Cleopatra and Mark Anthony! (Should I be grateful this
-				coffee is only hot enough to give me first degree burns?) 'To err is human, to forgive, divine.' I-I
-				think I need to clear my head. I-I get it! That's why my lunch was so salty! Noooooooooooo! </p>
-
-		</div>
-	</footer>
-</body>
-
+	<body class="text-dark bg-light min-h-screen scroll-smooth">
+		{isHome && <Hero title={title} description={description} />}
+		<slot />
+		<footer class="bg-cyan-400 p-8 text-xl">
+			<div class="prose lg:prose-lg mx-auto">
+				<h2 class="">About Vegan Dog Rater</h2>
+				<p class="">
+					I promised my sister I'd bring her Mia Fey but… (Which Daddy
+					was that again?) If you want tea that badly, buy some
+					yourself! Cute girls never lie. Ever.
+				</p>
+				<p>
+					Why, Mr. Edgeworth... I'm not sure I like you wagging your
+					finger at me as though I were some hoser! We were great
+					together! We were Romeo and Juliet, Cleopatra and Mark
+					Anthony! (Should I be grateful this coffee is only hot
+					enough to give me first degree burns?) 'To err is human, to
+					forgive, divine.' I-I think I need to clear my head. I-I get
+					it! That's why my lunch was so salty! Noooooooooooo!
+				</p>
+			</div>
+		</footer>
+	</body>
 </html>

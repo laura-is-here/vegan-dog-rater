@@ -1,7 +1,7 @@
 ---
-import Layout from "../layouts/Layout.astro"
+import Layout from "../layouts/Layout.astro";
 
-const { content } = Astro.props
+const { content } = Astro.props;
 ---
 
 <Layout title={content.title} description={content.description}>
@@ -9,61 +9,87 @@ const { content } = Astro.props
         <article class="max-w-screen-lg mx-2 lg:mx-auto space-y-12 pt-12">
             <div class="flex items-start lg:items-center lg:justify-between">
                 <div>
-                    <h1 class="inline-block text-4xl lg:text-6xl leading-none font-bold mb-2">
-                        {!content.brand ? content.title : `${content.title} by ${content.brand} Review`}
+                    <h1
+                        class="inline-block text-4xl lg:text-6xl leading-none font-bold mb-2 pr-4"
+                    >
+                        {
+                            !content.brand
+                                ? content.title
+                                : `${content.title} by ${content.brand} Review`
+                        }
                     </h1>
 
                     <p class="italic text-xl">"{content.excerpt}"</p>
-
                 </div>
 
                 <div
-                    class="inline-block p-4 lg:p-8 drop-shadow-lg font-bold text-light bg-accent-red rounded-full rotate-12 lg:-mt-8">
-                    <p class="text-4xl lg:text-6xl leading-none">{content.rating}</p>
+                    class="flex-none flex justify-center items-center h-20 w-20 lg:h-32 lg:w-32 p-4 lg:p-8 drop-shadow-lg font-bold text-light bg-red-600 rounded-full rotate-12 lg:-mt-8"
+                >
+                    <p class="text-4xl lg:text-6xl leading-none">
+                        {content.rating}
+                    </p>
                 </div>
-
             </div>
 
             <div class="grid gap-4 md:grid-cols-3">
                 <div
-                    class="border-dashed border-4 border-stone-300 rounded-lg flex items-center justify-between p-6 mx-2 relative ">
-                    <h2 class="text-2xl font-bold ">Taste</h2>
-                    <div class="flex text-4xl justify-center"><span class="text-theme iconify"
-                            data-icon="emojione-monotone:hot-dog"></span><span class="text-theme iconify"
-                            data-icon="emojione-monotone:hot-dog"></span><span class="text-theme iconify"
-                            data-icon="emojione-monotone:hot-dog"></span><span class="text-theme iconify"
-                            data-icon="emojione-monotone:hot-dog"></span><span class=" iconify"
-                            data-icon="emojione-monotone:hot-dog"></span></div>
+                    class="border-dashed border-4 border-stone-300 rounded-lg flex items-center justify-between p-6 mx-2 relative"
+                >
+                    <h2 class="text-2xl font-bold">Taste</h2>
+                    <div class="flex text-4xl justify-center">
+                        <span
+                            class="text-theme iconify"
+                            data-icon="emojione-monotone:hot-dog"></span><span
+                            class="text-theme iconify"
+                            data-icon="emojione-monotone:hot-dog"></span><span
+                            class="text-theme iconify"
+                            data-icon="emojione-monotone:hot-dog"></span><span
+                            class="text-theme iconify"
+                            data-icon="emojione-monotone:hot-dog"></span><span
+                            class="iconify"
+                            data-icon="emojione-monotone:hot-dog"></span>
+                    </div>
                 </div>
                 <div
-                    class="border-dashed border-4 border-stone-300 rounded-lg flex items-center justify-between p-6 mx-2 relative ">
-                    <h2 class="text-2xl font-bold ">Bite</h2>
-                    <div class="flex text-4xl justify-center"><span class="text-theme iconify"
-                            data-icon="emojione-monotone:hot-dog"></span><span class="text-theme iconify"
-                            data-icon="emojione-monotone:hot-dog"></span><span class="text-theme iconify"
-                            data-icon="emojione-monotone:hot-dog"></span><span class="text-theme iconify"
-                            data-icon="emojione-monotone:hot-dog"></span><span class=" iconify"
-                            data-icon="emojione-monotone:hot-dog"></span></div>
+                    class="border-dashed border-4 border-stone-300 rounded-lg flex items-center justify-between p-6 mx-2 relative"
+                >
+                    <h2 class="text-2xl font-bold">Bite</h2>
+                    <div class="flex text-4xl justify-center">
+                        <span
+                            class="text-theme iconify"
+                            data-icon="emojione-monotone:hot-dog"></span><span
+                            class="text-theme iconify"
+                            data-icon="emojione-monotone:hot-dog"></span><span
+                            class="text-theme iconify"
+                            data-icon="emojione-monotone:hot-dog"></span><span
+                            class="text-theme iconify"
+                            data-icon="emojione-monotone:hot-dog"></span><span
+                            class="iconify"
+                            data-icon="emojione-monotone:hot-dog"></span>
+                    </div>
                 </div>
                 <div
-                    class="border-dashed border-4 border-stone-300 rounded-lg flex items-center justify-between p-6 mx-2 relative ">
-                    <h2 class="text-2xl font-bold ">Value</h2>
-                    <div class="flex text-4xl justify-center"><span class="text-theme iconify"
-                            data-icon="emojione-monotone:hot-dog"></span><span class="text-theme iconify"
-                            data-icon="emojione-monotone:hot-dog"></span><span class="text-theme iconify"
-                            data-icon="emojione-monotone:hot-dog"></span><span class="text-theme iconify"
-                            data-icon="emojione-monotone:hot-dog"></span><span class="text-theme iconify"
-                            data-icon="emojione-monotone:hot-dog"></span></div>
+                    class="border-dashed border-4 border-stone-300 rounded-lg flex items-center justify-between p-6 mx-2 relative"
+                >
+                    <h2 class="text-2xl font-bold">Value</h2>
+                    <div class="flex text-4xl justify-center">
+                        <span
+                            class="text-theme iconify"
+                            data-icon="emojione-monotone:hot-dog"></span><span
+                            class="text-theme iconify"
+                            data-icon="emojione-monotone:hot-dog"></span><span
+                            class="text-theme iconify"
+                            data-icon="emojione-monotone:hot-dog"></span><span
+                            class="text-theme iconify"
+                            data-icon="emojione-monotone:hot-dog"></span><span
+                            class="text-theme iconify"
+                            data-icon="emojione-monotone:hot-dog"></span>
+                    </div>
                 </div>
-
-
-
             </div>
             <div class="prose md:prose-lg prose-stone">
                 <slot />
-
             </div>
-
         </article>
     </main>
 </Layout>

@@ -5,6 +5,9 @@ import Banner from "../components/Banner.astro"
 import RatingPreview from "../components/RatingPreview.astro";
 
 const dogs = await Astro.glob("./dogs/*.md")
+const categories = config.categories.map(category => 
+	category.title
+	)
 ---
 
 <Layout isHome={true}>
@@ -12,21 +15,16 @@ const dogs = await Astro.glob("./dogs/*.md")
 		<div class="">
 			<Banner title="The Definitive Vegan Hot Dog Rankings" />
 			{config.categories.map(category => (
-			<h3 class="text-2xl font-bold mb-2 inline-block">{category.title}</h3>
-			<div class="flex text-4xl justify-center mb-6"><span class="text-theme iconify"
-					data-icon="emojione-monotone:hot-dog"></span><span class="text-theme iconify"
-					data-icon="emojione-monotone:hot-dog"></span><span class="text-theme iconify"
-					data-icon="emojione-monotone:hot-dog"></span><span class="text-theme iconify"
-					data-icon="emojione-monotone:hot-dog"></span><span class="text-theme iconify"
-					data-icon="emojione-monotone:hot-dog"></span></div>
+			<h3 class="text-2xl font-bold mb-2 text-center">{category.title}</h3>
 
 			<ul class="max-w-screen-lg mx-auto space-y-6 mb-12">
-				{dogs.map(dog => (
-				<RatingPreview dog={dog.frontmatter.title} brand={dog.frontmatter.brand} rating={dog.frontmatter.rating}
+				{dogs
+					.filter(dog => dog.frontmatter.rating >= category.minRating)
+					.filter(dog => dog.frontmatter.rating <= category.maxRating)
+					.map(dog =>
+						<RatingPreview dog={dog.frontmatter.title} brand={dog.frontmatter.brand} rating={dog.frontmatter.rating}
 					excerpt={dog.frontmatter.excerpt} url={dog.url} />
-				))
-
-				}
+				)}
 			</ul>
 			))}
 
